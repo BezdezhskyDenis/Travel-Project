@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./CSS/journeys_style.css">
+    <link rel="stylesheet" href="./CSS/journeys_curve_timeline.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="mysidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#" class="sidenav-border" onclick="openMain()">Main</a>
+        <a href="#" class="sidenav-border north" id="north-jorney">North</a>
+        <a href="#" class="sidenav-border center" id="center-jorney">Center</a>
+        <a href="#" class="sidenav-border south" id="south-jorney">South</a>
+    </div>
+    <div id="main">
+        <span onclick="openNav()" class="nav">&#9776; open</span>
+        <firsttitle name = "title">Travel With Bez</firsttitle>
+        <p class="welcome">The Beautiful North<br>One of my Favorite place in Israel</p>
+        <p class="first-title">One of my Favorite place in Israel</p>
+        <p>about us</p>
+        <a href="#section1" class="move_first" onclick="myMove()">Click to discover the journy</a>
+        <div class="timeline">
+            <div class="outer">
+                <div class="parallax1 card" id="section1">
+                        <div class="info">
+                            <h3 class="title">Title 1 </h3>
+                            <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                            aliquip ex ea commodo consequat.
+                            </p>
+                            <img src="./images/north2.jpg" alt="North" class="picture">
+                            <a href="#section2" class="move_next" onclick="myMove()">click on me to go next</a>
+                        </div>
+                </div>
+                <div class="parallax card" id="section2">
+                        <div class="info">
+                            <h3 class="title">Title 2</h3>
+                            <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                            aliquip ex ea commodo consequat.
+                            </p>
+                            <img src="./images/north2.jpg" alt="North" class="picture">
+                            <a href="#section3" class="move_next">click on me to go next</a>
+                        </div>
+                </div>
+                <div class="parallax2 card" id="section3">
+                    <div class="info">
+                        <h3 class="title">Title 3</h3>
+                        <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                        minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                        aliquip ex ea commodo consequat.
+                        </p>
+                        <img src="./images/north2.jpg" alt="North" class="picture">
+                        <a href="#section1" class="move_next">click on me to go next</a>
+                    </div>
+                </div>
+              <!-- ..... you can add more div with "card" class -->
+            </div>
+          </div>
+    </div>
+</body>
+<script>
+function openMain() {
+    window.open("index.html", "_self")
+}
+
+function openNav() {
+  document.getElementById("mysidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft ="250px";
+}
+
+function closeNav() {
+  document.getElementById("mysidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft ="0";
+}
+
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
+
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usefull_Tips</title>
+    <link rel="stylesheet" href="./CSS/style_usefull_tips.css">
+    <link rel="stylesheet" href="">
+</head>
+<body>
+    
+    <div id="mysidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#" onclick="openMain()" class="sidenav-border">Main</a>
+        <a href="#" class="sidenav-border">Sign in</a>
+        <a href="#" onclick="openForm()" class="sidenav-border">Register</a>
+        <div id="Journeys-direction" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeSecondNav()">&times;</a>
+            <a href="#" class="sidenav-border north" onclick="openJourneyNorth()" id="north-jorney">North</a>
+            <a href="#" class="sidenav-border center" onclick="openJourneyCenter()" id="center-jorney">Center</a>
+            <a href="#" class="sidenav-border south" onclick="openJourneySouth()" id="south-jorney">South</a>
+        </div>
+        <a href="#" class="sidenav-border" onclick="openSecondNav(), closeNav()">Journeys</a>
+    </div>
+    <div id="main">
+        <span onclick="openNav()" class="nav">&#9776; open</span>
+        <firsttitle name = "title">Travel With Bez</firsttitle>
+        <br><br>
+        <p class="welcome">There are to many trips you can find</p>
+        <p class="first-title">Lets find together the best trip for you</p>
+        <p class ="first-title">First you need to chosse where you want to travel</p>
+            <select id="selectdirection" class="custom-select" onChange="SelectDirection()">
+              <option value="0">Select Direction:</option>
+              <option value="1">North</option>
+              <option value="2">Center</option>
+              <option value="3">South</option>
+            </select>
+          <br><br>
+        <div class="trip" id="trip_by" style="display:none">
+            <label class="chosse">Chosse youre Trip way:</label>
+        <div class="trip">
+            <label for="by_car" class="chosseoption">By Car:</label>
+                <label class="switch">
+                    <input type="checkbox" name="chossetrip" id="by_car" onclick="ChkTripFunction()">
+                    <span class="slider round"></span>
+                </label>
+                <label for="by_wallk" class="chosseoption">By Wallk:</label>
+                <label class="switch">
+                    <input type="checkbox" name="chossetrip" id="by_wallk" onclick="ChkTripFunction()">
+                    <span class="slider round"></span>
+                </label>
+        </div>
+        </div>
+        <div class="chktrip" id="divCar" style="display:none">
+            <p class="chosseoption">Trips for Offroads and 4X4</p>
+        </div>
+        <div class="chktrip" id="divWallk" style="display:none">
+            <p class="chosseoption">Trips for Hick and Family</p>
+        </div>
+        <div class="chktrip" id="divBoth" style="display:none">
+            <p class="chosseoption">Trips for Offroads, 4X4, Hick and Family</p>
+        </div>
+        <br>
+        <div class="chktrip" id="display_trip1">
+            <iframe id="display_trip" src="">
+            </iframe>
+        </div>
+        <p id="demo" style="font-size: 20px"></p>
+    </div>
+    <input type="text" id="value" style="display:none">
+</body>
+<script>
+
+function openMain() {
+    window.open("index.html", "_self")
+}
+
+function openForm() {
+    window.open("register.html","MsgWindow","fullscreen=no")
+}
+
+function openJourneyNorth() {
+    window.open("journey_north.html","_self")
+}
+
+function openJourneySouth() {
+    window.open("journey_south.html","_self")
+}
+
+function openJourneyCenter() {
+    alert('Comming soon as posible. Join us to be the first explorer of the highest speed city in Israel')
+}
+
+function openNav() {
+  document.getElementById("mysidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft ="250px";
+}
+
+function closeNav() {
+    document.getElementById("mysidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft ="0";
+    
+}
+
+function openSecondNav() {
+  document.getElementById("Journeys-direction").style.width = "250px";
+  document.getElementById("main").style.marginLeft ="250px";
+}
+
+function closeSecondNav() {
+  document.getElementById("Journeys-direction").style.width = "0";
+  document.getElementById("main").style.marginLeft ="0";
+}
+
+function ChkTripFunction() {
+  var Direction = document.getElementById("selectdirection");
+  var option = Direction.options[Direction.selectedIndex];
+  var checkboxcar = document.getElementById("by_car");
+  var checkboxwallk = document.getElementById("by_wallk");
+  var divCar = document.getElementById("divCar");
+  var divWallk = document.getElementById("divWallk");
+  var divBoth = document.getElementById("divBoth");
+  var c = document.getElementById("display_trip");
+  var Last_Src = ""
+  var Add_Src = ""
+  const d = new Date();
+  let month = d.getMonth();
+  document.getElementById("demo").innerHTML = month;
+    if (option.value == "1"){
+            Last_Src = "https://www.tiuli.com/tracks?dests=1";
+        }
+        if (option.value == "2"){
+            Last_Src = "https://www.tiuli.com/tracks?dests=2";
+        }
+        if (option.value == "3"){
+            Last_Src = "https://www.tiuli.com/tracks?dests=4";
+        }
+    if (7 < month && month < 11){
+        Last_Src += "&seasons=2";
+    }
+    if (10 < month && month < 2){
+        Last_Src += "&seasons=4";
+    }
+    if (1 < month && month < 5){
+        Last_Src += "&seasons=1";
+    }
+    if (4 < month && month < 8){
+        Last_Src += "&seasons=3";
+    }
+  if (checkboxcar.checked == true){
+    if (checkboxwallk.checked == false){
+    divCar.style.display = "block";
+    divWallk.style.display = "none";
+    Add_Src = Last_Src + "&features=26,27"
+    c.setAttribute("src", Add_Src);
+        } else {
+        divCar.style.display = "none";
+        c.setAttribute("src", Last_Src);
+        } 
+    } else {
+        divCar.style.display = "none";
+        c.setAttribute("src", Last_Src);
+    }
+  if (checkboxwallk.checked == true){
+    if (checkboxcar.checked == false){
+    divWallk.style.display = "block";
+    divCar.style.display = "none";
+    Add_Src = Last_Src + "&features=14,15,16"
+    c.setAttribute("src", Add_Src);
+        } else {
+        divWallk.style.display = "none";
+        c.setAttribute("src", Last_Src);
+        } 
+    } else {
+        divWallk.style.display = "none";
+    }
+  if (checkboxcar.checked == true){
+    if (checkboxwallk.checked == true){
+    divBoth.style.display = "block";
+    divCar.style.display = "none";
+    divWallk.style.display = "none";
+    Add_Src = Last_Src + "&features=14,15,16,26,27"
+    c.setAttribute("src", Add_Src);
+    } else {
+        divBoth.style.display = "none";
+    }
+  } else {
+    divBoth.style.display = "none";
+  }
+}
+
+function SelectDirection() {
+    var Direction = document.getElementById("selectdirection");
+    var option = Direction.options[Direction.selectedIndex];
+    var TripBy = document.getElementById("trip_by");
+    var b = document.getElementById("display_trip");
+    document.getElementById('value').value = option.value;
+    if (option.value != "0"){
+        if (option.value == "1"){
+            TripBy.style.display = "block";
+            b.setAttribute("src", "https://www.tiuli.com/tracks?dests=1");
+        }
+        if (option.value == "2"){
+            TripBy.style.display = "block";
+            b.setAttribute("src", "https://www.tiuli.com/tracks?dests=2");
+        }
+        if (option.value == "3"){
+            TripBy.style.display = "block";
+            b.setAttribute("src", "https://www.tiuli.com/tracks?dests=4");
+        }
+    } else {
+        TripBy.style.display = "none";
+        b.setAttribute("src", "");
+    }
+}
+
+
+
+</script>
+</html>

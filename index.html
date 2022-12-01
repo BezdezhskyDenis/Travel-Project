@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="./action.js">
+</head>
+<body>
+    <div id="mysidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#" class="sidenav-border">Sign in</a>
+        <a href="#" onclick="openForm()" class="sidenav-border">Register</a>
+        <div id="Journeys-direction" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeSecondNav()">&times;</a>
+            <a href="#" class="sidenav-border north" onclick="openJourneyNorth()" id="north-jorney">North</a>
+            <a href="#" class="sidenav-border center" onclick="openJourneyCenter()" id="center-jorney">Center</a>
+            <a href="#" class="sidenav-border south" onclick="openJourneySouth()" id="south-jorney">South</a>
+        </div>
+        <a href="#" class="sidenav-border" onclick="openSecondNav(), closeNav()">Journeys</a>
+        <a href="#" onclick="openUsefullTips()" class="sidenav-border">Usefull Tips</a>
+    </div>
+    <div id="main">
+        <span onclick="openNav()" class="nav">&#9776; open</span>
+        <firsttitle name = "title">Travel With Bez</firsttitle>
+        <br><br>
+        <p class="welcome">Welcome to my travel blog</p>
+        <p class="first-title">Here I'll show you my Trips and will give you some usefull tips</p>
+        <p>about us</p>
+    </div>
+</body>
+<script>
+function openForm() {
+    window.open("register.html","MsgWindow","fullscreen=no")
+}
+
+function openJourneyNorth() {
+    window.open("journey_north.html","_self")
+}
+
+function openJourneySouth() {
+    window.open("journey_south.html","_self")
+}
+
+function openJourneyCenter() {
+    alert('Comming soon as posible. Join us to be the first explorer of the highest speed city in Israel')
+}
+function openUsefullTips() {
+    window.open("usefull_tips.html", "_self")
+}
+
+function openNav() {
+  document.getElementById("mysidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mysidenav").style.width = "0";
+}
+function openSecondNav() {
+  document.getElementById("Journeys-direction").style.width = "250px";
+}
+
+function closeSecondNav() {
+  document.getElementById("Journeys-direction").style.width = "0";
+}
+</script>
+</html>

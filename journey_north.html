@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journey_North</title>
+    <link rel="stylesheet" href="./CSS/journeys_style.css">
+    <link rel="stylesheet" href="./CSS/journeys_curve_timeline_north.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="mysidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#" class="sidenav-border" onclick="openMain()">Main</a>
+        <a href="#" class="sidenav-border north" id="north-jorney" onclick="openJourneyNorth()">North</a>
+        <a href="#" class="sidenav-border center" id="center-jorney" onclick="openJourneyCenter()">Center</a>
+        <a href="#" class="sidenav-border south" id="south-jorney" onclick="openJourneySouth()">South</a>
+    </div>
+    <div class="parallax">
+    <div id="main">
+        <span onclick="openNav()" class="nav">&#9776; open</span>
+        <firsttitle name = "title">Travel With Bez</firsttitle>
+        <p class="welcome">The Beautiful North<br>One of my Favorite place in Israel</p>
+        <p class="first-title">My story begins from one of the mountains, That have very beautiful view for Sun Raise</p>
+        <p class="first-title">In this Journey, We going to went through from the Northwest point of Galiley to the North point of Israel </p>
+        <p class="first-title">The best season for this journey is a spring</p>
+        <p class="first-title">And you will need to wake up early morning to catch the rays of sunshine</p><br>
+        <a href="#section1">
+          <div class="encircle bounce animated">
+            <div class="flip_arrow" onclick="myMove()">
+            </div>
+          </div>
+        </a>
+        <div class="timeline">
+            <div class="outer">
+                <div class="parallax1 card" id="section1">
+                        <div class="info">
+                            <h3 class="title">The "Arbel" Mountain </h3>
+                            <p>
+                              The Arbel is a cliff located in northern Israel in the eastern part of the Lower Galilee,
+                              northwest of Tiberias, north of the Arbel Valley.
+                              Mount Arbel rises to a height of 181 meters above sea level,
+                              about 390 meters above the Sea of Galilee.<br>
+                              The Arbel Cliff, which rises above the Sea of Galilee,
+                              overlooks the Golan heights of Hermon and the Galilee Mountains and is the heart of the Arbel Nature Reserve,
+                              and the Arbel National Park that surrounds it. The Arbel National Park and Nature Reserve also includes Mount Nitai,
+                              Mount Savyon, Nahal Arbel, as well as two ancient settlements that left the remains of two magnificent synagogues and a wall from the time of the Great Revolt,
+                              as well as hiking trails to an ancient fortress with natural caves.
+
+                            </p>
+                            <iframe width="700" height="350" src="https://www.youtube.com/embed/0V5K11iozp0?autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                            </iframe>
+                            <a href="#section2" class="move_next">
+                              <div class="encircle bounce animated">
+                                <div class="flip_arrow" onclick="myMove()">
+                                </div>
+                              </div></a>
+                        </div>
+                </div>
+                <div class="card" id="section2">
+                        <div class="info">
+                            <h3 class="title">Title 2</h3>
+                            <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                            aliquip ex ea commodo consequat.
+                            </p>
+                            <img src="./images/north2.jpg" alt="North" class="picture"><br>
+                            <a href="#section3" class="move_next">
+                              <div class="encircle bounce animated">
+                                <div class="flip_arrow" onclick="myMove()">
+                                </div>
+                              </div>
+                            </a>
+                        </div>
+                </div>
+                <div class="parallax2 card" id="section3">
+                    <div class="info">
+                        <h3 class="title">Title 3</h3>
+                        <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                        minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                        aliquip ex ea commodo consequat.
+                        </p>
+                        <img src="./images/north2.jpg" alt="North" class="picture"><br>
+                        <a href="#section1" class="move_next">
+                          <div class="encircle bounce animated">
+                            <div class="flip_arrow" onclick="myMove()">
+                            </div>
+                          </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+          </div>
+    </div>
+  </div>
+</body>
+<script>
+function openMain() {
+    window.open("index.html", "_self")
+}
+
+function openNav() {
+  document.getElementById("mysidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft ="250px";
+}
+
+function closeNav() {
+  document.getElementById("mysidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft ="0";
+}
+
+$(document).ready(function(){
+  $("a").on('click', function(event) {
+
+    if (this.hash !== "") {
+      event.preventDefault();
+
+      var hash = this.hash;
+
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        window.location.hash = hash;
+      });
+    } 
+  });
+});
+
+function openJourneyNorth() {
+    window.open("journey_north.html","_self")
+}
+
+function openJourneySouth() {
+    window.open("journey_south.html","_self")
+}
+
+function openJourneyCenter() {
+    window.open("journey_south.html","_self")
+}    
+</script>
+
+</html>
