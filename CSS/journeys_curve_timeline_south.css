@@ -136,7 +136,7 @@
   }
 
   .parallax {
-    background-image: url('/images/desert.jpg');
+    background-image: url('../images/desert.jpg');
     height: 100%; 
     background-attachment: fixed;
     background-position: center;
@@ -145,7 +145,7 @@
   }
 
   .parallax1 {
-    background-image: url('/images/desert.jpg');
+    background-image: url('../images/desert.jpg');
     height: 100%; 
     background-attachment: fixed;
     background-position: center;
@@ -154,7 +154,7 @@
   }
 
   .parallax2 {
-    background-image: url('/images/north.jpg');
+    background-image: url('../images/north.jpg');
     height: 100%; 
     background-attachment: fixed;
     background-position: center;

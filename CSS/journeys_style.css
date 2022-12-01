@@ -83,7 +83,7 @@ firsttitle{
     .sidenav a {font-size: 18px;}
   }
   #south-jorney{
-    background-image: url("/images/desert.jpg");
+    background-image: url("../images/desert.jpg");
     background-repeat: no-repeat;
     background-size: 250px 400px;
     color: black;
@@ -92,7 +92,7 @@ firsttitle{
   }
 
   #north-jorney{
-    background-image: url("/images/north2.jpg");
+    background-image: url("../images/north2.jpg");
     background-repeat: no-repeat;
     background-size: 250px 250px;
     color: white;
@@ -101,7 +101,7 @@ firsttitle{
   }
 
   #center-jorney{
-    background-image: url("/images/center.jpg");
+    background-image: url("../images/center.jpg");
     background-repeat: no-repeat;
     background-size: 250px 335px;
     color: black;
